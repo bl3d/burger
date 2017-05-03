@@ -62,6 +62,13 @@ ul {
 	float: left;	
 	transition: width 0.5s;
 }
+ul::after{
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
 
 ul#toChew{
  
@@ -91,8 +98,7 @@ li p{
 }
 
 li .chompBtn{
-	display: inline-block;
-	cursor: pointer;
+	display: inline-block;	
 }
 
 .chompThis{ 
@@ -104,6 +110,7 @@ background: linear-gradient(to bottom,  rgba(255,231,7,1) 0%,rgba(255,239,99,1) 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe707', endColorstr='#ffec47',GradientType=0 ); /* IE6-9 */
     padding: 4px 10px;	
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
@@ -113,6 +120,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe707', end
 	margin-top: 25px;
 	left: 50%;
 	margin-left: -175px;
+	clear: both;
 }
 
 .form-group{
