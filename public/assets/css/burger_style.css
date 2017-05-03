@@ -1,0 +1,16 @@
+html, body{
+	top: 0px;
+	margin: 0px;
+	padding: 0px;	
+}
+
+#mainContent{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #fbd174;
+	margin: 0px;
+	padding: 0px;
+}

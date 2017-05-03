@@ -1,0 +1,40 @@
+<div id="mainContent">
+
+
+	<ul id="toChew">
+	  {{#each burgers}}
+	  	{{#unless this.devoured}}
+		  	<li>
+		  	  <p><span class="label">ID:</span> {{this.id}}</p>
+		      <p><span class="label"></span> {{this.burger_name}}</p> 
+
+		      <form action="/{{this.id}}?_method=PUT" method="POST">
+		        <input type="hidden" name="id" value="{{this.id}}">
+		        <button type="submit">CHOMP!</button>
+		      </form>
+		  	</li>
+	  	{{/unless}} 
+	  {{/each}}
+	</ul>
+
+	<ul id="chomped">
+	  {{#each burgers}}
+	  	{{#if this.devoured}}
+		  	<li>
+		  	  <p><span class="label">ID:</span> {{this.id}}</p>
+		      <p><span class="label"></span> {{this.burger_name}}</p>
+		  	</li>
+	  	{{/if}} 
+	  {{/each}}
+	</ul>	
+
+	
+	<form class="create-form" action="/insert" method="POST">
+
+	  <div class="form-group"> 
+	    <input type="text" id="newBurger" name="newBurger">
+	  </div>
+
+	  <button type="submit">Add Burger</button>
+	</form>	
+</div>
