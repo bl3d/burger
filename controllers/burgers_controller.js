@@ -14,9 +14,14 @@ router.get("/", function(req, res) {
 
 //add a new burger to the list to devour
 router.post("/insert", function(req, res) { 
-  burger.insertOne(req.body.newBurger, function() {
+  var burgerName = req.body.newBurger;
+  if (burgerName.length > 0) {
+    burger.insertOne(req.body.newBurger, function() {
+      res.redirect("/");
+    });
+  } else {
     res.redirect("/");
-  });
+  } 
 });
 
 //mark a burger as devoured
